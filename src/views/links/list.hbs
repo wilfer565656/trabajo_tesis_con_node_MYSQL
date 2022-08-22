@@ -1,0 +1,41 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each users1}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                     <h3 class="card-title text-uppercase">
+                        estuadinte:{{fullname}}
+                       
+                    </h3>
+            
+                    <h3 class="card-title text-uppercase">
+                        codigo:  {{id}}
+                        
+                    </h3>
+                    <p class="m-2">usuario: {{username}}</p>
+                    <p class="m-2">rol: {{rol}}</p>
+
+                    
+                    <p class="text-muted">
+                        {{timeago created_at}}
+                    </p>
+                    <a class="btn btn-danger" href="/links/delete/{{id}}">
+                        eliminar 
+                    </a>
+                    <a class="btn btn-secondary" href="/links/edit/{{id}}">
+                        Editar
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>ud no tiene usuarios registrados</p>
+                <a href="/links/add2">crear !</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
